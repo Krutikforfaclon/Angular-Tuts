@@ -1,0 +1,17 @@
+<div class="container">
+    <div class="row">
+        <h1>DataBinding</h1>
+        <hr>
+        <app-servers></app-servers>
+        <app-interpolation></app-interpolation>
+        <app-interpolation></app-interpolation>
+        <button class="btn btn-primary" (click)=onToggleDetails()>Display Detail</button>
+        <p *ngIf="showSecret">password=tuna</p>
+        <div *ngFor = "let logItem of log; let i=index"
+            [ngStyle] = "{backgroundColor: i>=5 ? 'blue' : 'transparent' }"
+            [ngClass] = "{'white-text':i>=4}"
+        >
+            {{logItem}}
+        </div>
+    </div>
+</div>
